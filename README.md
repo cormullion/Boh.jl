@@ -20,7 +20,7 @@ On this page the image is used under the terms of Fair Use in the United States:
 Basic usage:
 
 ```julia
-using Luxor
+using Luxor, Boh
 @svg boh()
 ```
 
@@ -29,7 +29,7 @@ using Luxor
 Filled by default. Or you can stroke:
 
 ```julia
-using Luxor
+using Luxor, Boh
 @svg begin
     setline(3)
     randomhue()
@@ -42,7 +42,7 @@ end 200 200 "/tmp/boh-stroke.svg"
 Or use him as a clipping region:
 
 ```julia
-using Luxor
+using Luxor, Boh
 @svg begin
     boh(:clip)
     setblend(
@@ -60,6 +60,7 @@ end 200 200 "/tmp/boh.svg"
 Or just play around:
 
 ```julia
+using Luxor, Boh
 @svg begin
     background("skyblue")
     prettypoly(polysample(box(BoundingBox() - 20, vertices=true), 20), :none, () -> begin
